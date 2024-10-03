@@ -71,7 +71,7 @@ main {
 
 #secao_principal {
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 20px 250px;
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);
     background-image: url(/img/secaoPrincipal.png); 
     background-size: cover;
@@ -108,7 +108,7 @@ main {
 /* Seção de ícones no rodapé da seção principal */
 #footer_secao_principal {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #footer_secao_principal ul {
