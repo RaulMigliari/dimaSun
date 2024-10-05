@@ -1,0 +1,78 @@
+/* Centralização e estilo do formulário de login */
+.login_container {
+    background-color: #8eaba4; /* Cor de fundo */
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #007BFF; /* Borda azul */
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: auto; /* Centralização horizontal */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    color: #000;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: white; /* Cor do fundo dos campos */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.cadastro_link {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.cadastro_link a {
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.cadastro_link a:hover {
+    text-decoration: underline;
+}
+
+/* Centralizando o formulário verticalmente na página */
+.login_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px); /* Altura da página menos header e footer */
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DimaSun - Login</title>
     <link rel="stylesheet" href="/layout.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -15,25 +16,27 @@
             <a id="login_button" href="/login">Login</a>
         </div>
     </header>
-    <body>
-        <br><br>
-        <form>
-            <label for="email">Email:</label>
-            <br>
-            <input type="email" name="email" id="email" required>
-            <br>
-            <a href="/cadastro/index.html">Não tem uma conta? Cadastrar-se</a>
-            <br><br>
+    <main>
+        <div class="login_wrapper">
+            <div class="login_container">
+                <h2>Login</h2>
+                <form>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+    
+                    <div class="cadastro_link">
+                        <a href="/cadastro/index.html">Não tem uma conta? Cadastrar-se</a>
+                    </div>
+        
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" placeholder="Digite sua senha" id="password" required>
+        
+                    <button type="submit">Acessar</button>
+                </form>
+            </div>
 
-
-            <label for="password">Password:</label>
-            <br>
-            <input type="password" name="password" id="password" required>
-            <br><br>
-
-            <button type="submit">Acessar</button>
-        </form>
-    </body>
+        </div>
+    </main>
     <footer>
         <p>&copy; 2024 DimaSun</p>
         <a href="./sobreNos">Sobre Nós</a>
