@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DimaSun - Login</title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+<body>
+    <header>
+        <a id="logo_link" href="../index.html">DimaSun</a>
+
+        <div id="elementos_header">
+            <a href="/empresas/index.html">Empresas</a>
+            <a href="/comoFunciona/index.html">Como Funciona</a>
+            <a id="login_button" href="/login/index.html">Login</a>
+        </div>
+    </header>
+    <body>
+        <div id="container_cadastro">
+            <form id="form_cadastro">
+                <h2>Cadastro</h2>
+                <label for="nome_completo">Nome Completo</label>          
+                <input type="text" name="nome_completo" id="nome_completo" required placeholder="Digite seu nome completo">
+    
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required placeholder="Digite seu e-mail"> 
+                
+    
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" required placeholder="Digite sua senha">
+
+                <label for="data_nascimento">Data de Nascimento</label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required >
+                
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone" required placeholder="(00) 0000-0000">
+
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" id="estado" required placeholder="Digite seu estado">
+
+                <label for="cep">CEP</label>
+                <input type="text" name="cep" id="cep" required placeholder="Digite seu CEP">
+
+                <label for="profissao">Profissão (Opcional)</label>
+                <input type="text" name="profissao" id="profissao" placeholder="Digite sua profissão">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro" required placeholder="Digite seu bairro">
+
+                <label for="rua">Rua</label>
+                <input type="text" name="rua" id="rua" required placeholder="Digite sua rua">
+          
+                <label for="numero">Número</label>
+                <input type="text" name="numero" id="numero" required placeholder="Número">
+                
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <p>&copy; 2024 DimaSun</p>
+        <a href="/sobreNos/index.html">Sobre Nós</a>
+        <p>Contato</p>
+    </footer>
+
+    <script src="/scripts/client.js"></script>
+</body>
+</html>
