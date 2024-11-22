@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DimaSun - Empresas Parceiras</title>    
+    <link rel="stylesheet" href="/css/encontreEmpresa.css">
+    <link rel="stylesheet" href="/css/layout.css">
+
+</head>
+<body>
+    <header>
+        <a id="logo_link" href="../index.html">DimaSun</a>
+
+        <div id="elementos_header">
+            <a href="/empresas/index.html">Empresas</a>
+            <a href="/comoFunciona/index.html">Como Funciona</a>
+            <a id="login_button" href="/login/index.html">Login</a>
+            <a id="logout_button" href="../index.html" style="display: none;">Sair</a>
+        </div>
+    </header>
+    <main>
+        <form class="form-container">
+            <h2>Informações do Cliente</h2>
+            <div class="form-grid">
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div>
+                    <label for="areaInstalacao">Área disponível para instalação:</label>
+                    <input type="text" id="areaInstalacao" required>
+                </div>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" required>
+                </div>
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" required>
+                </div>
+                <div>
+                    <label for="telhado">Orientação e inclinação do telhado:</label>
+                    <input type="text" id="telhado" required>
+                </div>
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" required>
+                </div>
+                <div>
+                    <label for="consumo">Consumo médio (últimos 3 meses):</label>
+                    <input type="text" id="consumo" required>
+                </div>
+                <div class="checkbox-group">
+                    <span>Tipo de imóvel:</span>
+                    <input type="radio" id="residencial" name="tipo" value="residencial">
+                    <label for="residencial">Residencial</label>
+                    <input type="radio" id="comercial" name="tipo" value="comercial">
+                    <label for="comercial">Comercial</label>
+                </div>
+                <div class="checkbox-group">
+                    <span>Presença de sombreamento:</span>
+                    <input type="radio" id="sombra-sim" name="sombra" value="sim">
+                    <label for="sombra-sim">Sim</label>
+                    <input type="radio" id="sombra-nao" name="sombra" value="nao">
+                    <label for="sombra-nao">Não</label>
+                </div>
+                <div class="checkbox-group">
+                    <span>Prazo para instalação:</span>
+                    <input type="radio" id="imediato" name="prazo" value="imediato">
+                    <label for="imediato">Imediato</label>
+                    <input type="radio" id="medio" name="prazo" value="medio">
+                    <label for="medio">1 a 3 meses</label>
+                    <input type="radio" id="longo" name="prazo" value="longo">
+                    <label for="longo">Mais de 3 meses</label>
+                </div>
+                <div class="checkbox-group">
+                    <span>Preferência:</span>
+                    <input type="radio" id="qualidade" name="preferencia" value="qualidade">
+                    <label for="qualidade">Qualidade</label>
+                    <input type="radio" id="custo-beneficio" name="preferencia" value="custo-beneficio">
+                    <label for="custo-beneficio">Custo-benefício</label>
+                    <input type="radio" id="equilibrio" name="preferencia" value="equilibrio">
+                    <label for="equilibrio">Equilíbrio</label>
+                </div>
+                <div class="checkbox-group">
+                    <span>Forma de pagamento:</span>
+                    <input type="radio" id="avista" name="pagamento" value="avista">
+                    <label for="avista">À vista</label>
+                    <input type="radio" id="parcelado" name="pagamento" value="parcelado">
+                    <label for="parcelado">Parcelado</label>
+                    <input type="radio" id="financiamento" name="pagamento" value="financiamento">
+                    <label for="financiamento">Financiamento</label>
+                </div>
+                <div>
+                    <label for="orcamento">Orçamento:</label>
+                    <input type="text" id="orcamento" required>
+                </div>
+                <div>
+                    <label for="email">E-mail para contato:</label>
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 DimaSun</p>
+        <a href="/sobreNos/index.html">Sobre Nós</a>
+        <p>Contato</p>
+    </footer>
+
+    <script src="/scripts/auth.js"></script>
+</body>
+</html>

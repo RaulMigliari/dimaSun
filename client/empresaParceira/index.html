@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DimaSun - Empresas Parceiras</title>
+    <link rel="stylesheet" href="/css/empresaParceira.css">
     <link rel="stylesheet" href="/css/layout.css">
 </head>
 <body>
@@ -14,11 +15,97 @@
             <a href="/empresas/index.html">Empresas</a>
             <a href="/comoFunciona/index.html">Como Funciona</a>
             <a id="login_button" href="/login/index.html">Login</a>
-            <a id="logout_button" href="#" style="display: none;">Sair</a>
+            <a id="logout_button" href="../index.html" style="display: none;">Sair</a>
         </div>
     </header>
     <main>
+        <form>
+            <label for="nomeEmpresa">Nome da Empresa: </label>
+            <input type="text" name="nomeEmpresa" id="nomeEmpresa" required>
 
+            <label for="cnpj">CNPJ: </label>
+            <input type="text" name="cnpj" id="cnpj" required>
+
+            <select name="servicos" id="servicos">
+                <option value="">Escolha um tipo de serviço</option>
+                <option value="placaSolar">Instação de placas solares</option>
+                <option value="manutencao">Manutenção</option>
+                <option value="consultoria">Consultoria</option>
+            </select>
+            <br><br>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" name="Telefone" id="Telefone" required>
+
+            <label for="edComercial">Endereço comercial:</label>
+            <input type="text" name="edComercial" id="edComercial" required>
+
+            <h3>Detalhamento dos custos</h3>
+            <label for="placas">Placas solares:</label>
+            <input type="text" name="placas" id="placas" required>
+
+            <label for="maoDeObra">Mão de obra:</label>
+            <input type="text" name="maoDeObra" id="maoDeObra" required>
+
+            <label for="equipamentoAdicional">Equipamentos adicionais:</label>
+            <input type="text" name="equipamentoAdicional" id="equipamentoAdicional" required>
+            <br><br>
+
+            <label for="inversores">Inversores:</label>
+            <input type="text" name="inversores" id="inversores" required>
+
+            <label for="taxa">Taxa de licenciamento e permissões:</label>
+            <input type="text" name="taxa" id="taxa" required>
+
+            <label for="servicoPosInstalacao">Serviços pós-instalação:</label>
+            <input type="text" name="servicoPosInstalacao" id="servicoPosInstalacao" required>
+            <br><br>
+
+            <label for="estruturaSuporte">Estrutura de suporte:</label>
+            <input type="text" name="estruturaSuporte" id="estruturaSuporte" required>
+
+            <label for="freteLogistica">Frete e logística:</label>
+            <input type="text" name="frete" id="frete" required>
+
+            <label for="impostos">Impostos</label>
+            <input type="text" name="impostos" id="impostos" required>
+            <br><br>
+
+            <label for="marcasEquipamentos">Marcas e equipamentos utilizados: </label>
+            <input type="text" name="marcasEquipamentos" id="marcasEquipamentos" required>
+
+            <label>Termos de garantia e suporte:</label>
+            <input type="radio" name="garantiaSuporte" id="5anos" value="5">
+            <label for="5anos">Até 5 anos</label>
+
+            <input type="radio" name="garantiaSuporte" id="10anos" value="10">
+            <label for="10anos">Até 10 anos</label>
+
+            <input type="radio" name="garantiaSuporte" id="garantiaEstendida" value="g">
+            <label for="garantiaEstendida">Garantia Estendida</label>
+
+            <label>Opções de financiamento:</label>
+            <input type="radio" name="opcaoFinanciamento" id="bancario" value="b">
+            <label for="bancario">Bancário</label>
+
+            <input type="radio" name="opcaoFinanciamento" id="parcela" value="p">
+            <label for="parcela">Parcela sem juros</label>
+
+            <label for="opcaoFinanciamento">Outro:</label>
+            <input type="text" name="outro" id="outro">
+            <br><br>
+
+            <label for="portfolio">Portifólio de projetos:</label>
+            <input type="text" name="portfolio" id="portfolio">
+
+            <label for="emailContato">E-mail para contato:</label>
+            <input type="text" name="emailContato" id="emailContato" required>
+
+            <label for="site">Site/canais de contato:</label>
+            <input type="text" name="site" id="site" required>
+
+            <button type="submit">Salvar</button>
+        </form>
     </main>
     <footer>
         <p>&copy; 2024 DimaSun</p>
