@@ -5,21 +5,6 @@ body {
     background-size: cover;
 }
 
-header {
-    background-color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#logo_link {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-
 main {
     display: flex;
     justify-content: center;

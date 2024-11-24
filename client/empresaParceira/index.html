@@ -19,93 +19,94 @@
         </div>
     </header>
     <main>
-        <form>
-            <label for="nomeEmpresa">Nome da Empresa: </label>
-            <input type="text" name="nomeEmpresa" id="nomeEmpresa" required>
-
-            <label for="cnpj">CNPJ: </label>
-            <input type="text" name="cnpj" id="cnpj" required>
-
-            <select name="servicos" id="servicos">
-                <option value="">Escolha um tipo de serviço</option>
-                <option value="placaSolar">Instação de placas solares</option>
-                <option value="manutencao">Manutenção</option>
-                <option value="consultoria">Consultoria</option>
-            </select>
-            <br><br>
-
-            <label for="telefone">Telefone:</label>
-            <input type="tel" name="Telefone" id="Telefone" required>
-
-            <label for="edComercial">Endereço comercial:</label>
-            <input type="text" name="edComercial" id="edComercial" required>
-
-            <h3>Detalhamento dos custos</h3>
-            <label for="placas">Placas solares:</label>
-            <input type="text" name="placas" id="placas" required>
-
-            <label for="maoDeObra">Mão de obra:</label>
-            <input type="text" name="maoDeObra" id="maoDeObra" required>
-
-            <label for="equipamentoAdicional">Equipamentos adicionais:</label>
-            <input type="text" name="equipamentoAdicional" id="equipamentoAdicional" required>
-            <br><br>
-
-            <label for="inversores">Inversores:</label>
-            <input type="text" name="inversores" id="inversores" required>
-
-            <label for="taxa">Taxa de licenciamento e permissões:</label>
-            <input type="text" name="taxa" id="taxa" required>
-
-            <label for="servicoPosInstalacao">Serviços pós-instalação:</label>
-            <input type="text" name="servicoPosInstalacao" id="servicoPosInstalacao" required>
-            <br><br>
-
-            <label for="estruturaSuporte">Estrutura de suporte:</label>
-            <input type="text" name="estruturaSuporte" id="estruturaSuporte" required>
-
-            <label for="freteLogistica">Frete e logística:</label>
-            <input type="text" name="frete" id="frete" required>
-
-            <label for="impostos">Impostos</label>
-            <input type="text" name="impostos" id="impostos" required>
-            <br><br>
-
-            <label for="marcasEquipamentos">Marcas e equipamentos utilizados: </label>
-            <input type="text" name="marcasEquipamentos" id="marcasEquipamentos" required>
-
-            <label>Termos de garantia e suporte:</label>
-            <input type="radio" name="garantiaSuporte" id="5anos" value="5">
-            <label for="5anos">Até 5 anos</label>
-
-            <input type="radio" name="garantiaSuporte" id="10anos" value="10">
-            <label for="10anos">Até 10 anos</label>
-
-            <input type="radio" name="garantiaSuporte" id="garantiaEstendida" value="g">
-            <label for="garantiaEstendida">Garantia Estendida</label>
-
-            <label>Opções de financiamento:</label>
-            <input type="radio" name="opcaoFinanciamento" id="bancario" value="b">
-            <label for="bancario">Bancário</label>
-
-            <input type="radio" name="opcaoFinanciamento" id="parcela" value="p">
-            <label for="parcela">Parcela sem juros</label>
-
-            <label for="opcaoFinanciamento">Outro:</label>
-            <input type="text" name="outro" id="outro">
-            <br><br>
-
-            <label for="portfolio">Portifólio de projetos:</label>
-            <input type="text" name="portfolio" id="portfolio">
-
-            <label for="emailContato">E-mail para contato:</label>
-            <input type="text" name="emailContato" id="emailContato" required>
-
-            <label for="site">Site/canais de contato:</label>
-            <input type="text" name="site" id="site" required>
-
-            <button type="submit">Salvar</button>
-        </form>
+        <div class="form-container">
+            <h2>Informações da Empresa</h2>
+            <form>
+                <div>
+                    <label for="nomeEmpresa">Nome da Empresa:</label>
+                    <input type="text" name="nomeEmpresa" id="nomeEmpresa" required>
+                </div>
+                <div>
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" name="cnpj" id="cnpj" required>
+                </div>
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone" required>
+                </div>
+                <div>
+                    <label for="endereco">Cidade-Estado:</label>
+                    <input type="text" name="endereco" id="endereco" required>
+                </div>
+                <div>
+                    <label for="emailContato">E-mail para contato:</label>
+                    <input type="email" name="emailContato" id="emailContato" required>
+                </div>
+                <div>
+                    <label for="site">Site/canais de contato:</label>
+                    <input type="text" name="site" id="site" required>
+                </div>
+                <h3>Detalhamento dos custos</h3>
+                <div>
+                    <label for="placas">Valor das Placas solares por m² (R$):</label>
+                    <input type="text" name="placas" id="placas" required>
+                </div>
+                <div>
+                    <label for="maoDeObra">Necessidade de equipe (A cada 50m² de placa):</label>
+                    <input type="text" name="maoDeObra" id="maoDeObra" required>
+                </div>
+                <div>
+                    <label for="valorMaoDeObra">Valor de Equipe de Mão de Obra (R$):</label>
+                    <input type="text" name="valorMaoDeObra" id="valorMaoDeObra" required>
+                </div>
+                <div>
+                    <label for="equipamentoAdicional">Equipamentos adicionais (R$):</label>
+                    <input type="text" name="equipamentoAdicional" id="equipamentoAdicional" required>
+                </div>
+                <div>
+                    <label for="inversores">Inversores (uni):</label>
+                    <input type="text" name="inversores" id="inversores" required>
+                </div>
+                <div>
+                    <label for="taxa">Impostos e taxas adicionais (R$):</label>
+                    <input type="text" name="taxa" id="taxa" required>
+                </div>
+                <div>
+                    <label for="frete">Frete e logística (a cada 70km):</label>
+                    <input type="text" name="frete" id="frete" required>
+                </div>
+                <div>
+                    <label for="servicos">Serviços oferecidos:</label>
+                    <select name="servicos" id="servicos" required>
+                        <option value="">Escolha um tipo de serviço</option>
+                        <option value="placaSolar">Instalação de placas solares</option>
+                        <option value="manutencao">Manutenção</option>
+                        <option value="consultoria">Consultoria</option>
+                    </select>
+                </div>
+                <div class="full-width">
+                    <label>Termos de garantia e suporte:</label>
+                    <input type="radio" name="garantiaSuporte" id="5anos" value="5anos">
+                    <label for="5anos">Até 5 anos</label>
+                    <input type="radio" name="garantiaSuporte" id="10anos" value="10anos">
+                    <label for="10anos">Até 10 anos</label>
+                    <input type="radio" name="garantiaSuporte" id="garantiaEstendida" value="garantiaEstendida">
+                    <label for="garantiaEstendida">Garantia Estendida</label>
+                </div>
+                <div class="full-width">
+                    <label>Opções de financiamento:</label>
+                    <input type="radio" name="opcaoFinanciamento" id="bancario" value="bancario">
+                    <label for="bancario">Bancário</label>
+                    <input type="radio" name="opcaoFinanciamento" id="parcela" value="parcela">
+                    <label for="parcela">Parcela sem juros</label>
+                </div>
+                <div>
+                    <label for="estimativa">Estimativa media de instalação (meses):</label>
+                    <input type="text" name="estimativa" id="estimativa">
+                </div>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 DimaSun</p>
@@ -114,5 +115,6 @@
     </footer>
 
     <script src="/scripts/auth.js"></script>
+    <script src="/scripts/empresa.js"></script>
 </body>
 </html>

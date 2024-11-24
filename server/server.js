@@ -76,6 +76,63 @@ app.post('/login', async (req, res) => {
     res.status(200).json({ message: 'Login bem-sucedido!', data: { nome_completo: user.nome_completo } });
 });
 
+app.post('/empresa', async (req, res) => {
+    const {
+        nomeEmpresa,
+        cnpj,
+        telefone,
+        endereco,
+        emailContato,
+        site,
+        placas,
+        maoDeObra,
+        valorMaoDeObra,
+        equipamentoAdicional,
+        inversores,
+        taxa,
+        frete,
+        servicos,
+        garantiaSuporte,
+        opcaoFinanciamento,
+        estimativa,
+    } = req.body;
+
+    try {
+        const { data, error } = await supabase
+            .from('empresas')
+            .insert([{
+                nome_empresa: nomeEmpresa,
+                cnpj,
+                telefone,
+                endereco,
+                email_contato: emailContato,
+                site,
+                valor_placas: placas,
+                necessidade_mao_de_obra: maoDeObra,
+                valor_equipe: valorMaoDeObra,
+                equipamentos_adicionais: equipamentoAdicional,
+                inversores,
+                impostos_taxas: taxa,
+                frete,
+                servicos,
+                garantia_suporte: garantiaSuporte,
+                opcao_financiamento: opcaoFinanciamento,
+                estimativa,
+            }]);
+
+        if (error) {
+            console.error('Erro ao inserir dados:', error);
+            res.status(500).json({ error: 'Erro ao salvar os dados no banco de dados.' });
+        } else {
+            res.status(201).json({ message: 'Empresa cadastrada com sucesso!', data });
+        }
+    } catch (err) {
+        console.error('Erro no servidor:', err);
+        res.status(500).json({ error: 'Erro interno do servidor.' });
+    }
+});
+
+
 // Iniciar o Servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);

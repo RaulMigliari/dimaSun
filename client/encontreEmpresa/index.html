@@ -28,8 +28,8 @@
                     <input type="text" id="nome" required>
                 </div>
                 <div>
-                    <label for="areaInstalacao">Área disponível para instalação:</label>
-                    <input type="text" id="areaInstalacao" required>
+                    <label for="endereco">Cidade - Estado:</label>
+                    <input type="text" id="endereco" required>
                 </div>
                 <div>
                     <label for="cpf">CPF:</label>
@@ -41,15 +41,29 @@
                 </div>
                 <div>
                     <label for="telhado">Orientação e inclinação do telhado:</label>
-                    <input type="text" id="telhado" required>
+                    <select name="telefone" id="telhado" required>
+                        <option value="">Opções de orientação e inclinação...</option>
+                        <option value="norteSul">Norte/Sul</option>
+                        <option value="oesteLeste">Oeste/Leste</option>
+                        <option value="ambos">Ambos</option>
+                    </select>
                 </div>
                 <div>
                     <label for="telefone">Telefone:</label>
                     <input type="tel" id="telefone" required>
                 </div>
                 <div>
-                    <label for="consumo">Consumo médio (últimos 3 meses):</label>
+                    <label for="consumo">Consumo médio (últimos 3 meses) (kWh):</label>
                     <input type="text" id="consumo" required>
+                </div>
+                <div>
+                    <label for="servicos">Serviço requisitado:</label>
+                    <select name="servicos" id="servicos" required>
+                        <option value="">Escolha o serviço requisitado...</option>
+                        <option value="instalacaoPlaca">Instalação da placa</option>
+                        <option value="manutencao">Manutenção</option>
+                        <option value="consultoria">Consultoria</option>
+                    </select>
                 </div>
                 <div class="checkbox-group">
                     <span>Tipo de imóvel:</span>
@@ -93,7 +107,7 @@
                     <label for="financiamento">Financiamento</label>
                 </div>
                 <div>
-                    <label for="orcamento">Orçamento:</label>
+                    <label for="orcamento">Viabilidade financeira (R$):</label>
                     <input type="text" id="orcamento" required>
                 </div>
                 <div>

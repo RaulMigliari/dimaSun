@@ -1,0 +1,77 @@
+/* Layout Geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(to bottom, #eaf0f5, #ffffff) no-repeat fixed;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo no início, logo abaixo do header */
+    min-height: calc(100vh - 70px); /* Altura da tela menos o header */
+    margin: 0 20px;
+    padding-top: 100px; /* Espaço para compensar o header fixo */
+    overflow-y: auto;
+}
+
+form {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+
+form h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #47604f;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form select {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input[type="radio"] {
+    margin-right: 5px;
+}
+
+form input[type="radio"] + label {
+    margin-right: 15px;
+}
+
+form button {
+    display: block;
+    width: 100px;
+    padding: 10px 15px;
+    background-color: #47604f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+form button:hover {
+    background-color: #37513c;
+}
