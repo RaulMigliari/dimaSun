@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR ">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DimaSun - Empresas Parceiras</title>    
     <link rel="stylesheet" href="/css/encontreEmpresa.css">
     <link rel="stylesheet" href="/css/layout.css">
-
 </head>
 <body>
     <header>
         <a id="logo_link" href="../index.html">DimaSun</a>
-
         <div id="elementos_header">
             <a href="/empresas/index.html">Empresas</a>
             <a href="/comoFunciona/index.html">Como Funciona</a>
@@ -65,57 +63,63 @@
                         <option value="consultoria">Consultoria</option>
                     </select>
                 </div>
-                <div class="checkbox-group">
-                    <span>Tipo de imóvel:</span>
-                    <input type="radio" id="residencial" name="tipo" value="residencial">
-                    <label for="residencial">Residencial</label>
-                    <input type="radio" id="comercial" name="tipo" value="comercial">
-                    <label for="comercial">Comercial</label>
+                <div>
+                    <label for="tipo-imovel">Tipo de imóvel:</label>
+                    <select id="tipo-imovel" required>
+                        <option value="">Selecione...</option>
+                        <option value="residencial">Residencial</option>
+                        <option value="comercial">Comercial</option>
+                    </select>
                 </div>
-                <div class="checkbox-group">
-                    <span>Presença de sombreamento:</span>
-                    <input type="radio" id="sombra-sim" name="sombra" value="sim">
-                    <label for="sombra-sim">Sim</label>
-                    <input type="radio" id="sombra-nao" name="sombra" value="nao">
-                    <label for="sombra-nao">Não</label>
+                <div>
+                    <label for="sombreamento">Presença de sombreamento:</label>
+                    <select id="sombreamento" required>
+                        <option value="">Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
                 </div>
-                <div class="checkbox-group">
-                    <span>Prazo para instalação:</span>
-                    <input type="radio" id="imediato" name="prazo" value="imediato">
-                    <label for="imediato">Imediato</label>
-                    <input type="radio" id="medio" name="prazo" value="medio">
-                    <label for="medio">1 a 3 meses</label>
-                    <input type="radio" id="longo" name="prazo" value="longo">
-                    <label for="longo">Mais de 3 meses</label>
+                <div>
+                    <label for="prazo-instalacao">Prazo para instalação:</label>
+                    <select id="prazo-instalacao" required>
+                        <option value="">Selecione...</option>
+                        <option value="imediato">Imediato</option>
+                        <option value="2-5-meses">2 a 5 meses</option>
+                        <option value="mais-5-meses">Mais de 5 meses</option>
+                    </select>
                 </div>
-                <div class="checkbox-group">
-                    <span>Preferência:</span>
-                    <input type="radio" id="qualidade" name="preferencia" value="qualidade">
-                    <label for="qualidade">Qualidade</label>
-                    <input type="radio" id="custo-beneficio" name="preferencia" value="custo-beneficio">
-                    <label for="custo-beneficio">Custo-benefício</label>
-                    <input type="radio" id="equilibrio" name="preferencia" value="equilibrio">
-                    <label for="equilibrio">Equilíbrio</label>
+                <div>
+                    <label for="preferencia">Preferência:</label>
+                    <select id="preferencia" required>
+                        <option value="">Selecione...</option>
+                        <option value="qualidade">Qualidade</option>
+                        <option value="custo-beneficio">Custo-benefício</option>
+                        <option value="equilibrio">Equilíbrio</option>
+                    </select>
                 </div>
-                <div class="checkbox-group">
-                    <span>Forma de pagamento:</span>
-                    <input type="radio" id="avista" name="pagamento" value="avista">
-                    <label for="avista">À vista</label>
-                    <input type="radio" id="parcelado" name="pagamento" value="parcelado">
-                    <label for="parcelado">Parcelado</label>
-                    <input type="radio" id="financiamento" name="pagamento" value="financiamento">
-                    <label for="financiamento">Financiamento</label>
+                <div>
+                    <label for="forma-pagamento">Forma de pagamento:</label>
+                    <select id="forma-pagamento" required>
+                        <option value="">Selecione...</option>
+                        <option value="avista">À vista</option>
+                        <option value="parcelado">Parcelado</option>
+                        <option value="financiamento">Financiamento</option>
+                    </select>
                 </div>
                 <div>
                     <label for="orcamento">Viabilidade financeira (R$):</label>
                     <input type="text" id="orcamento" required>
                 </div>
                 <div>
+                    <label for="tamanho">Tamanho do Telhado de instalação (m²):</label>
+                    <input type="text" id="tamanho" required>
+                </div>
+                <div>
                     <label for="email">E-mail para contato:</label>
                     <input type="email" id="email" required>
                 </div>
             </div>
-            <button type="submit">Salvar</button>
+            <button type="submit">Enviar as Informações para analise</button>
         </form>
     </main>
     <footer>
@@ -123,7 +127,6 @@
         <a href="/sobreNos/index.html">Sobre Nós</a>
         <p>Contato</p>
     </footer>
-
     <script src="/scripts/auth.js"></script>
     <script src="/scripts/encontreEmpresa.js"></script>
 </body>

@@ -19,12 +19,9 @@ const port = process.env.PORT || 3000;
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 // Configuração do OpenAI
-const configuration = {
-    apiKey: process.env.OPENAI_API_KEY,
-    organization: "org-RChuKsXqfYXO70oR7G18Iu6y",
-    project: "proj_P9RPsOpGavFAhqZAbrqmsm2B",
-}
-const openai = new OpenAI(configuration);
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+});
 
 app.use(bodyParser.json());
 
@@ -153,36 +150,73 @@ app.post('/empresa', async (req, res) => {
 app.post('/encontrar-empresas', async (req, res) => {
     try {
         const dadosCliente = req.body;
+        console.log('Dados do cliente recebidos:', dadosCliente);
 
         // Recuperar empresas do banco de dados
         const { data: empresas, error } = await supabase.from('empresas').select('*');
 
         if (error) {
+            console.error('Erro ao buscar empresas:', error);
             return res.status(500).json({ error: 'Erro ao buscar empresas' });
         }
 
+        if (!empresas || empresas.length === 0) {
+            console.log('Nenhuma empresa encontrada no banco de dados');
+            return res.status(404).json({ error: 'Nenhuma empresa encontrada' });
+        }
+
+        console.log(`Encontradas ${empresas.length} empresas`);
+
         // Criar um prompt baseado nas informações do cliente e das empresas
-        const prompt = `
-        Baseando-se nas informações do cliente:
-        Nome: ${dadosCliente.nome}
-        Localização: ${dadosCliente.endereco}
-        Consumo médio: ${dadosCliente.consumo} kWh
-        Serviço requisitado: ${dadosCliente.servicos}
+        
+const prompt = `
+Analise as informações do cliente e das empresas disponíveis e retorne um JSON estruturado com as 3 melhores recomendações.
 
-        E na lista de empresas disponíveis:
-        ${empresas.map((empresa, index) => `
-        Empresa ${index + 1}:
-        Nome: ${empresa.nomeEmpresa}
-        Cidade-Estado: ${empresa.endereco}
-        Serviços: ${empresa.servicos}
-        Custos: 
-            - Placas solares por m²: R$${empresa.placas}
-            - Frete: R$${empresa.frete} a cada 70km
-            - Taxas: R$${empresa.taxa}
-        `).join('\n')}
+Informações do Cliente:
+- Nome: ${dadosCliente.nome}
+- Tamanho da instalação: ${dadosCliente.tamanho}m²
+- Consumo médio: ${dadosCliente.consumo}kWh
+- Preferência: ${dadosCliente.preferencia}
+- Prazo desejado: ${dadosCliente.prazo_instalacao}
 
-        Determine as 3 empresas mais indicadas para atender às necessidades do cliente com base na qualidade, custo-benefício e viabilidade.
-        `;
+Empresas Disponíveis:
+${empresas.map((empresa, index) => `
+Empresa ${index + 1}:
+- Nome: ${empresa.nome_empresa}
+- Localização: ${empresa.endereco}
+- Custos Base:
+  * Placas solares/m²: R$${empresa.valor_placas}
+  * Equipe: R$${empresa.valor_equipe}
+  * Inversores: R$${empresa.inversores}
+  * Equipamentos: R$${empresa.equipamentos_adicionais}
+  * Taxas: R$${empresa.impostos_taxas}
+- Tempo estimado: ${empresa.estimativa} meses
+`).join('\n')}
+
+Calcule o orçamento usando: (área * valor_placas) + equipe + equipamentos + taxas + inversores.
+Priorize as 3 melhoes empresas que atendam às preferências do cliente (custo-benefício, qualidade ou viabilidade).
+
+Por favor, forneça a resposta no seguinte formato JSON:
+{
+  "recomendacoes": [
+    {
+      "posicao": 1,
+      "empresa": {
+        "nome": "Nome da Empresa",
+        "localizacao": "Cidade-Estado",
+        "tempoInstalacao": "X meses",
+        "diferenciais": ["diferencial 1", "diferencial 2"]
+      },
+      "orcamento": {
+        "valorTotal": 00000,
+      },
+      "motivoEscolha": "Breve explicação do motivo desta recomendação"
+    }
+  ],
+  "observacoes": "Observações gerais sobre as recomendações"
+}
+`;
+
 
         // Chamar a API do OpenAI para gerar as recomendações
         const response = await openai.chat.completions.create({
@@ -196,12 +230,19 @@ app.post('/encontrar-empresas', async (req, res) => {
             ],
         });
 
-        const recomendacoes = response.data.choices[0].text.trim();
+        console.log('Resposta da OpenAI:', response);
+
+        const recomendacoes = response.choices[0].message.content;
+        
+        console.log('Recomendações geradas:', recomendacoes);
 
         res.status(200).json({ recomendacoes });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Erro ao processar a solicitação' });
+        console.error('Erro detalhado:', error);
+        res.status(500).json({ 
+            error: 'Erro ao processar a solicitação',
+            detalhes: error.message 
+        });
     }
 });
 
